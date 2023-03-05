@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "aNWgu0UGWo0gBBQxwd+hh8ZBt1mkb/HO6ZHyPwydr27Qk38DH1S/idDq3Y4dQ85T1mhsfjL3t0ROYhghbyiaVQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\Tracker_UI\\TrackerUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sakuner\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512"
+  ],
+  "logs": []
+}
