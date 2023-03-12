@@ -8,6 +8,7 @@ namespace Tracker_UI
         [STAThread]
         static void Main()
         {
+            //run the program
             ApplicationConfiguration.Initialize();
             Application.Run(new TrackerUI.TournamentDashboardForm());
         }
