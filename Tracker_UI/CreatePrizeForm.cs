@@ -31,8 +31,11 @@ namespace TrackerUI
                 foreach (var db in GlobalConfig.Connections)
                 {
                     db.CreatePrize(model);
-
                 }
+                PlaceNameValue.Text = "";
+                PlaceNumberValue.Text = "";
+                prizeAmountValue.Text = "0";
+                prizePercentageValue.Text = "0";
 
             }
             else
@@ -78,6 +81,11 @@ namespace TrackerUI
             }
 
             return output;
+        }
+
+        private void prizePercentageValue_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
