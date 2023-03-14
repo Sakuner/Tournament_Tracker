@@ -31,6 +31,7 @@ namespace TrackerUI
                 foreach (var db in GlobalConfig.Connections)
                 {
                     db.CreatePrize(model);
+
                 }
 
             }
