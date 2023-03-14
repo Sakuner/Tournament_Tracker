@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TrackerLibrary\TrackerLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="TournamentViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>

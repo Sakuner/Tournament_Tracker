@@ -10,6 +10,15 @@
         "runtime": {
           "lib/net5.0/Dapper.dll": {}
         }
+      },
+      "TrackerLibrary/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/TrackerLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrackerLibrary.dll": {}
+        }
       }
     }
   },
@@ -31,11 +40,17 @@
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml"
       ]
+    },
+    "TrackerLibrary/1.0.0": {
+      "type": "project",
+      "path": "../TrackerLibrary/TrackerLibrary.csproj",
+      "msbuildProject": "../TrackerLibrary/TrackerLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "Dapper >= 2.0.123"
+      "Dapper >= 2.0.123",
+      "TrackerLibrary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -69,7 +84,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj": {
+              "projectPath": "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

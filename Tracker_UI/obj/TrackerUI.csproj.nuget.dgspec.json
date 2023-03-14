@@ -4,6 +4,21 @@
     "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\Tracker_UI\\TrackerUI.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj",
+        "projectName": "TrackerLibrary",
+        "projectPath": "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\Tracker_UI\\TrackerUI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +46,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj": {
+                "projectPath": "C:\\Users\\Sakuner\\source\\repos\\Tournament_Tracker\\TrackerLibrary\\TrackerLibrary.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

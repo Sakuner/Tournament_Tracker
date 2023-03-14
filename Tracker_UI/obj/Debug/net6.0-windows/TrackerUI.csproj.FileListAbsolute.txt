@@ -43,3 +43,5 @@ C:\Users\Sakuner\source\repos\Tournament_Tracker\Tracker_UI\obj\Debug\net6.0-win
 C:\Users\Sakuner\source\repos\Tournament_Tracker\Tracker_UI\obj\Debug\net6.0-windows\TrackerUI.pdb
 C:\Users\Sakuner\source\repos\Tournament_Tracker\Tracker_UI\obj\Debug\net6.0-windows\TrackerUI.genruntimeconfig.cache
 C:\Users\Sakuner\source\repos\Tournament_Tracker\Tracker_UI\obj\Debug\net6.0-windows\ref\TrackerUI.dll
+C:\Users\Sakuner\source\repos\Tournament_Tracker\Tracker_UI\bin\Debug\net6.0-windows\TrackerLibrary.dll
+C:\Users\Sakuner\source\repos\Tournament_Tracker\Tracker_UI\bin\Debug\net6.0-windows\TrackerLibrary.pdb
