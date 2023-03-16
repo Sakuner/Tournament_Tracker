@@ -45,7 +45,7 @@
             this.FirstNameValue = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.teamMembersListbox = new System.Windows.Forms.ListBox();
-            this.deleteSelectedMember = new System.Windows.Forms.Button();
+            this.removeSelectedMember = new System.Windows.Forms.Button();
             this.createTeamButton = new System.Windows.Forms.Button();
             this.AddNewMemberBox.SuspendLayout();
             this.SuspendLayout();
@@ -233,20 +233,21 @@
             this.teamMembersListbox.Size = new System.Drawing.Size(365, 582);
             this.teamMembersListbox.TabIndex = 21;
             // 
-            // deleteSelectedMember
+            // removeSelectedMember
             // 
-            this.deleteSelectedMember.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.deleteSelectedMember.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.deleteSelectedMember.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame;
-            this.deleteSelectedMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteSelectedMember.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteSelectedMember.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.deleteSelectedMember.Location = new System.Drawing.Point(905, 381);
-            this.deleteSelectedMember.Name = "deleteSelectedMember";
-            this.deleteSelectedMember.Size = new System.Drawing.Size(136, 91);
-            this.deleteSelectedMember.TabIndex = 22;
-            this.deleteSelectedMember.Text = "Delete Selected";
-            this.deleteSelectedMember.UseVisualStyleBackColor = true;
+            this.removeSelectedMember.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.removeSelectedMember.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.removeSelectedMember.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame;
+            this.removeSelectedMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeSelectedMember.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.removeSelectedMember.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.removeSelectedMember.Location = new System.Drawing.Point(905, 381);
+            this.removeSelectedMember.Name = "removeSelectedMember";
+            this.removeSelectedMember.Size = new System.Drawing.Size(136, 91);
+            this.removeSelectedMember.TabIndex = 22;
+            this.removeSelectedMember.Text = "Remove Selected";
+            this.removeSelectedMember.UseVisualStyleBackColor = true;
+            this.removeSelectedMember.Click += new System.EventHandler(this.removeSelectedMember_Click);
             // 
             // createTeamButton
             // 
@@ -270,7 +271,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1076, 861);
             this.Controls.Add(this.createTeamButton);
-            this.Controls.Add(this.deleteSelectedMember);
+            this.Controls.Add(this.removeSelectedMember);
             this.Controls.Add(this.teamMembersListbox);
             this.Controls.Add(this.AddNewMemberBox);
             this.Controls.Add(this.AddTeamMemberButton);
@@ -307,7 +308,7 @@
         private TextBox FirstNameValue;
         private Label FirstNameLabel;
         private ListBox teamMembersListbox;
-        private Button deleteSelectedMember;
+        private Button removeSelectedMember;
         private Button createTeamButton;
     }
 }

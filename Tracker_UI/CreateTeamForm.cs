@@ -50,13 +50,16 @@ namespace TrackerUI
 
         private void AddTeamMemberButton_Click(object sender, EventArgs e)
         {
+            
             PersonModel p = (PersonModel)SelectTeamMemberDropDown.SelectedItem;
+            if (p != null)
+            {
+                availableTeamMembers.Remove(p);
+                selectedTeamMembers.Add(p);
 
-            availableTeamMembers.Remove(p);
-            selectedTeamMembers.Add(p);
-
-            //needed for data refresh
-            WireUpLists();
+                //needed for data refresh
+                WireUpLists();
+            }
         }
 
         private void CreateMemberButton_Click(object sender, EventArgs e)
@@ -103,6 +106,21 @@ namespace TrackerUI
             }
 
             return Output;
+        }
+
+        private void removeSelectedMember_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)teamMembersListbox.SelectedItem;
+
+            if (p != null)
+            {
+                selectedTeamMembers.Remove(p);
+                availableTeamMembers.Add(p);
+
+                //needed for data refresh
+                WireUpLists();
+            }
+            
         }
     }
 }
