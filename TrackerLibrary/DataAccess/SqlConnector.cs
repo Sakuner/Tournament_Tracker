@@ -10,9 +10,10 @@ namespace TrackerLibrary
 {
     public class SqlConnector : IDataConnection
     {
+        private const string db = "Tournaments";
         public PersonModel CreatePerson(PersonModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 
                 var p = new DynamicParameters();
@@ -34,7 +35,7 @@ namespace TrackerLibrary
         
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 //dapper stuff, adding data
                 var p = new DynamicParameters();
@@ -51,6 +52,16 @@ namespace TrackerLibrary
                 return model;
 
             }
+        }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            List<PersonModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
+            }
+            return output;
         }
     }
 }

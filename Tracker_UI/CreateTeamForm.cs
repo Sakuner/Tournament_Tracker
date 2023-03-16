@@ -13,8 +13,8 @@ namespace TrackerUI
 {
     public partial class CreateTeamForm : Form
     {
-        private List<PersonModel> availableTeamMembers = new List<PersonModel>();
-        private List<PersonModel> selectedTeamMember = new List<PersonModel>();
+        private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
+        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
         public CreateTeamForm()
         {
             InitializeComponent();
@@ -29,14 +29,17 @@ namespace TrackerUI
             availableTeamMembers.Add(new PersonModel { FirstName = "tomek", LastName = "Zarobek" });
             availableTeamMembers.Add(new PersonModel { FirstName = "jarek", LastName = "Wygarek" });
 
-            selectedTeamMember.Add(new PersonModel { FirstName = "jonasz", LastName = "Konasz" });
+            selectedTeamMembers.Add(new PersonModel { FirstName = "jonasz", LastName = "Konasz" });
         }
         private void WireUpLists()
         {
+            //null data source needed for data refresh
+            SelectTeamMemberDropDown.DataSource = null; 
             SelectTeamMemberDropDown.DataSource= availableTeamMembers;
-            SelectTeamMemberDropDown.DisplayMember = "FullName"; 
+            SelectTeamMemberDropDown.DisplayMember = "FullName";
 
-            teamMembersListbox.DataSource= selectedTeamMember;
+            teamMembersListbox.DataSource = null;
+            teamMembersListbox.DataSource= selectedTeamMembers;
             teamMembersListbox.DisplayMember = "FullName";
         }
 
@@ -47,7 +50,13 @@ namespace TrackerUI
 
         private void AddTeamMemberButton_Click(object sender, EventArgs e)
         {
+            PersonModel p = (PersonModel)SelectTeamMemberDropDown.SelectedItem;
 
+            availableTeamMembers.Remove(p);
+            selectedTeamMembers.Add(p);
+
+            //needed for data refresh
+            WireUpLists();
         }
 
         private void CreateMemberButton_Click(object sender, EventArgs e)
