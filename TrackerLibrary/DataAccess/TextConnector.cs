@@ -17,7 +17,12 @@ namespace TrackerLibrary
             // convert the text to list<prizemodel>
             List<PrizeModel> prizes = PrizesFile.FullFilePath().LoadFile().ConvertToPrizeModel();
             //find the max ID
-            int currentId = prizes.OrderByDescending(x => x.Id).First().Id + 1;
+            int currentId = 1;
+
+            if (prizes.Count > 0)
+            {
+                currentId = prizes.OrderByDescending(x => x.Id).First().Id + 1;
+            }
             model.Id = currentId;
             //add the new record with the new id
             prizes.Add(model);
