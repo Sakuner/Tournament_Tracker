@@ -71,7 +71,10 @@ namespace TrackerUI
                     LastNameValue.Text,
                     emailValue.Text,
                     CellphoneValue.Text);
-                GlobalConfig.Connection.CreatePerson(p);
+                p = GlobalConfig.Connection.CreatePerson(p);
+
+                selectedTeamMembers.Add(p);
+                WireUpLists();
 
                 FirstNameValue.Text = "";
                 LastNameValue.Text = "";
