@@ -125,5 +125,10 @@ namespace TrackerUI
             }
             
         }
+
+        private void createTeamButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
