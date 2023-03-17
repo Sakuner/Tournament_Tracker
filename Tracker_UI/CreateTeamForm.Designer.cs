@@ -67,7 +67,7 @@
             this.TeamNameLabel.Size = new System.Drawing.Size(192, 45);
             this.TeamNameLabel.TabIndex = 12;
             this.TeamNameLabel.Text = "Team Name";
-            this.TeamNameLabel.Click += new System.EventHandler(this.TournamentNameLabel_Click);
+            //this.TeamNameLabel.Click += new System.EventHandler(this.TournamentNameLabel_Click);
             // 
             // createTeamLabel
             // 
