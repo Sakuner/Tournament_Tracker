@@ -15,7 +15,6 @@ namespace TrackerLibrary
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                
                 var p = new DynamicParameters();
                 p.Add("@FirstName", model.FirstName);
                 p.Add("@LastName", model.LastName);
@@ -88,7 +87,6 @@ namespace TrackerLibrary
                 SaveTournamentPrizes(connection, model);
 
                 SaveTournamentEntries(connection, model);
-
 
             }
         }
