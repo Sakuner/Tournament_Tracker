@@ -16,15 +16,60 @@ namespace TrackerLibrary
             List<TeamModel> RandomizedTeams = RandomizeTeamOrder(model.EnteredTeams);
             int rounds = FindNumberOfRounds(RandomizedTeams.Count);
             int empties = NumberOfEmpties(rounds, RandomizedTeams.Count);
+
+            model.Rounds.Add(CreateFirstRound(empties, RandomizedTeams));
+
+            CreateOtherRounds(model, rounds);
+        }
+        private static void CreateOtherRounds(TournamentModel model, int rounds)
+        {
+            //round we start on
+            int round = 2;
+            List<MatchupModel> previousRound = model.Rounds[0];
+            List<MatchupModel> currRound = new List<MatchupModel>();
+            MatchupModel currMatchup = new MatchupModel();
+
+            while (round <= rounds)
+            {
+                foreach (MatchupModel match in previousRound)
+                {
+                    currMatchup.Entries.Add(new MatchupEntryModel { ParentMatchup = match } );
+
+                    if (currMatchup.Entries.Count > 1)
+                    {
+                        currMatchup.MatchupRound = round;
+                        currRound.Add(currMatchup);
+                        currMatchup = new MatchupModel();
+                    }
+                }
+                model.Rounds.Add(currRound);
+                previousRound = currRound;
+
+                currRound = new List<MatchupModel>();
+                round += 1;
+
+            }
         }
         private static List<MatchupModel> CreateFirstRound(int empties, List<TeamModel> teams)
         {
             List<MatchupModel> output = new List<MatchupModel>();
-            MatchupModel currentModel = new MatchupModel();
+            MatchupModel curr = new MatchupModel();
 
             foreach (TeamModel team in teams)
             {
+                curr.Entries.Add(new MatchupEntryModel { TeamCompeting = team });
 
+                if (empties > 0 || curr.Entries.Count > 1)
+                {
+                    curr.MatchupRound = 1;
+                    output.Add(curr);
+                    curr = new MatchupModel();
+
+                    if (empties > 0)
+                    {
+                        empties -= 1;
+                    }
+                }
             }
             return output;
         }
