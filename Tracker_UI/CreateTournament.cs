@@ -121,8 +121,11 @@ namespace TrackerUI
             tm.EntryFee = fee;
 
             tm.Prizes = selectedPrizes;
-            tm.EnteredTeams = selectedTeams;          
+            tm.EnteredTeams = selectedTeams;
             //create our matchups
+            TournamentLogic.CreateRounds(tm);
+            //random order
+            //checking if its big enough
 
             //create tournament entry
             //create all of the prizes entries
